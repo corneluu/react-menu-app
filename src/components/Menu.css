@@ -1,0 +1,145 @@
+.menu-container {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.menu-toggle {
+  display: none;
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 10px;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.menu-toggle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.menu {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 20px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.menu-item-wrapper {
+  position: relative;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 15px 20px;
+  background: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+.menu-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 20px rgba(102, 126, 234, 0.2);
+  border-color: #667eea;
+}
+
+.menu-item.active {
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  color: white;
+  border-color: transparent;
+}
+
+.menu-icon {
+  font-size: 1.2rem;
+}
+
+.menu-label {
+  flex: 1;
+}
+
+.submenu-arrow {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  border-radius: 0 0 12px 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  overflow: hidden;
+  margin-top: 5px;
+}
+
+.submenu-item {
+  width: 100%;
+  padding: 12px 20px;
+  border: none;
+  background: white;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.submenu-item:hover {
+  background: #f8f9fa;
+}
+
+.submenu-item.active {
+  background: #667eea;
+  color: white;
+}
+
+.menu-stats {
+  grid-column: 1 / -1;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 2px solid #f0f0f0;
+  display: flex;
+  justify-content: space-between;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+  
+  .menu {
+    display: none;
+    grid-template-columns: 1fr;
+  }
+  
+  .menu.open {
+    display: grid;
+  }
+  
+  .submenu {
+    position: static;
+    box-shadow: none;
+    margin-top: 5px;
+  }
+}

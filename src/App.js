@@ -6,6 +6,7 @@ import Services from './pages/Services';
 import Portfolio from './pages/Portfolio';
 import Contact from './pages/Contact';
 import './App.css';
+import { HashRouter as Router } from 'react-router-dom';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
